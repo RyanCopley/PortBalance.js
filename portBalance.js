@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Ryan Copley. All rights reserved.
 //
 
-function setupLoadBalancingHTTPServer(app, ports, networkInterface, callback){
+function portBalance(app, ports, networkInterface, callback){
     if (typeof networkInterface === 'function'){
         callback = networkInterface;
         networkInterface = null;
@@ -30,7 +30,7 @@ function setupLoadBalancingHTTPServer(app, ports, networkInterface, callback){
                 ports = ports.splice(1, ports.length);
                 if (ports.length){
                     //Recurse and try a different port.
-                    setupLoadBalancingHTTPServer(app, ports, networkInterface);
+                    portBalance(app, ports, networkInterface);
                 }else{
                     if (callback){
                         callback(new Error("All ports filled"));
@@ -41,4 +41,4 @@ function setupLoadBalancingHTTPServer(app, ports, networkInterface, callback){
     }
 }
 
-module.exports = setupLoadBalancingHTTPServer;
+module.exports = portBalance;
