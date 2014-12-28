@@ -1,0 +1,27 @@
+{
+  "name": "PortBalance.js",
+  "version": "1.0.0",
+  "description": "Balances ports to make load-balanced deployment easier.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'todo';"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RyanCopley/PortBalance.js.git"
+  },
+  "keywords": [
+    "express",
+    "port",
+    "balance",
+    "load",
+    "loadbalance",
+    "nginx"
+  ],
+  "author": "Ryan Copley <npm@ryancopley.com> (http://github.com/ObjectiveCopley)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RyanCopley/PortBalance.js/issues"
+  },
+  "homepage": "https://github.com/RyanCopley/PortBalance.js"
+}

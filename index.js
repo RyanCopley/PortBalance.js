@@ -25,8 +25,9 @@ function portBalance(app, ports, networkInterface, callback){
         
         //If a EADDRINUSE error gets raised, try the next port. If one of them is successful, we're good to go.
         server.on("error", function (err){
+            server.removeListener("error", function (err){}); // Always remove listeners!
+            
             if (err.code === 'EADDRINUSE'){
-                server.removeListener("error", function (err){}); // Always remove listeners!
                 ports = ports.splice(1, ports.length);
                 if (ports.length){
                     //Recurse and try a different port.
@@ -35,6 +36,10 @@ function portBalance(app, ports, networkInterface, callback){
                     if (callback){
                         callback(new Error("All ports filled"));
                     }
+                }
+            }else{
+                if (callback){
+                    callback(err);
                 }
             }
         });
