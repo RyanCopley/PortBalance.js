@@ -1,5 +1,5 @@
 {
-  "name": "PortBalance.js",
+  "name": "portbalance",
   "version": "1.0.0",
   "description": "Balances ports to make load-balanced deployment easier.",
   "main": "index.js",
