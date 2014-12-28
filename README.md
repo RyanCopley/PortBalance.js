@@ -12,7 +12,7 @@ Example:
 var express        = require('express');
 var app            = express();
 
-var portBalance = require("./portBalance.js");
+var portBalance = require("portBalance");
 //Pass your app and the possible ports you want to fill
 portBalance(app, [8000, 8001, 8002], '0.0.0.0', function (err, port){
     if (!err){
